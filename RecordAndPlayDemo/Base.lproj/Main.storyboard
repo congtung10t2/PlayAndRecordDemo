@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7KD-bK-lcM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RecordAndPlayDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-6D-UXc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtE-aa-M6r">
+                                <rect key="frame" x="145" y="286" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="dKI-eE-zTR"/>
+                                    <constraint firstAttribute="width" constant="64" id="xP9-eE-1IH"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="record"/>
+                                <connections>
+                                    <action selector="recordWithMusic" destination="BYZ-38-t0r" eventType="touchUpInside" id="VVj-lr-zQ9"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="recorded file will be save as" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tFd-SE-DCx">
+                                <rect key="frame" x="95" y="177" width="200" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ju-hI-GcK" userLabel="Stop">
+                                <rect key="frame" x="145" y="449" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="WBy-1G-SDe"/>
+                                    <constraint firstAttribute="height" constant="64" id="aK0-rf-ahj"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="save"/>
+                                <connections>
+                                    <action selector="stop" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ws-Ug-4wK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You must write a record name before we play it " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liZ-kH-GZ2">
+                                <rect key="frame" x="25" y="131" width="362" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHX-BJ-N7L" userLabel="Play">
+                                <rect key="frame" x="145" y="606" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="GFR-el-dLA"/>
+                                    <constraint firstAttribute="width" constant="64" id="vtP-em-q42"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="play"/>
+                                <connections>
+                                    <action selector="playRecorded" destination="BYZ-38-t0r" eventType="touchUpInside" id="dxn-cJ-z0s"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="liZ-kH-GZ2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="13P-9z-u4D"/>
+                            <constraint firstItem="hHX-BJ-N7L" firstAttribute="top" secondItem="9Ju-hI-GcK" secondAttribute="bottom" constant="40" id="2n2-ID-af5"/>
+                            <constraint firstItem="9Ju-hI-GcK" firstAttribute="top" secondItem="jtE-aa-M6r" secondAttribute="bottom" constant="40" id="KWd-QJ-rmI"/>
+                            <constraint firstItem="4hj-6D-UXc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Ksy-AE-WaO"/>
+                            <constraint firstItem="tFd-SE-DCx" firstAttribute="top" secondItem="liZ-kH-GZ2" secondAttribute="bottom" constant="20" id="PRq-E5-916"/>
+                            <constraint firstItem="liZ-kH-GZ2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="87" id="PYg-U1-cdc"/>
+                            <constraint firstItem="9Ju-hI-GcK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SW0-IU-lZD"/>
+                            <constraint firstItem="hHX-BJ-N7L" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="T90-Ar-K63"/>
+                            <constraint firstItem="jtE-aa-M6r" firstAttribute="top" secondItem="tFd-SE-DCx" secondAttribute="bottom" constant="40" id="Tx2-Ch-alh"/>
+                            <constraint firstItem="tFd-SE-DCx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WF9-tz-Dyj"/>
+                            <constraint firstItem="jtE-aa-M6r" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bYm-Lj-JD3"/>
+                            <constraint firstItem="4hj-6D-UXc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ccP-2r-py4"/>
+                            <constraint firstItem="4hj-6D-UXc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="hfe-vb-0KD"/>
+                            <constraint firstItem="4hj-6D-UXc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wf9-Oj-LDs"/>
+                            <constraint firstItem="4hj-6D-UXc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zj3-Cn-3jj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Main" image="house.fill" catalog="system" selectedImage="house.fill" id="bO1-9U-oUT"/>
+                    <connections>
+                        <outlet property="name" destination="tFd-SE-DCx" id="SrR-yU-hTS"/>
+                        <outlet property="play" destination="9Ju-hI-GcK" id="zO8-TT-HNL"/>
+                        <outlet property="record" destination="jtE-aa-M6r" id="VcK-hr-D1k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="117.85714285714285"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0UJ-YW-ofQ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7KD-bK-lcM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bcK-g2-Cdb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="aDF-23-w6a"/>
+                        <segue destination="vaG-oS-kTw" kind="relationship" relationship="viewControllers" id="oz7-7C-6zj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWa-jd-ywR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="TBI-fr-eEi">
+            <objects>
+                <viewController id="vaG-oS-kTw" customClass="HistoryController" customModule="RecordAndPlayDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dsm-IN-fZ3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Df-Fj-jqk">
+                                <rect key="frame" x="0.0" y="24" width="414" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemRecorded" id="qwj-3L-nVG" customClass="ItemRecorded" customModule="RecordAndPlayDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qwj-3L-nVG" id="YYx-TY-YNT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16c-Mg-Wag">
+                                                    <rect key="frame" x="20" y="30" width="414" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemName" destination="16c-Mg-Wag" id="0E8-Vt-iuF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1Df-Fj-jqk" firstAttribute="leading" secondItem="gR3-8Q-5xB" secondAttribute="leading" id="3mG-sZ-Ve3"/>
+                            <constraint firstItem="1Df-Fj-jqk" firstAttribute="width" secondItem="gR3-8Q-5xB" secondAttribute="width" id="HTz-0p-0c7"/>
+                            <constraint firstItem="gR3-8Q-5xB" firstAttribute="top" secondItem="1Df-Fj-jqk" secondAttribute="top" constant="20" id="QwP-bo-feZ"/>
+                            <constraint firstItem="1Df-Fj-jqk" firstAttribute="height" secondItem="gR3-8Q-5xB" secondAttribute="height" constant="-20" id="tuy-xt-dZ7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gR3-8Q-5xB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="History" image="folder.fill" catalog="system" id="17N-ap-Y0h"/>
+                    <connections>
+                        <outlet property="history" destination="1Df-Fj-jqk" id="HTF-25-P6L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ok7-rZ-zSM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="-556.47321428571422"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="300" height="532.5"/>
+        <image name="folder.fill" catalog="system" width="64" height="46"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="play" width="32" height="32"/>
+        <image name="record" width="32" height="32"/>
+        <image name="save" width="32" height="32"/>
+    </resources>
+</document>
