@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7KD-bK-lcM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,14 +11,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RecordAndPlayDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-6D-UXc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtE-aa-M6r">
-                                <rect key="frame" x="175" y="322" width="64" height="64"/>
+                                <rect key="frame" x="268" y="174" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jtE-aa-M6r" secondAttribute="height" multiplier="1:1" id="80M-bx-YKW"/>
                                 </constraints>
@@ -29,7 +28,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="recorded file will be save as" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tFd-SE-DCx">
-                                <rect key="frame" x="93.5" y="164" width="227.5" height="34"/>
+                                <rect key="frame" x="186.5" y="120" width="227.5" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="mhq-ws-cT0"/>
                                 </constraints>
@@ -37,7 +36,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ju-hI-GcK" userLabel="Stop">
-                                <rect key="frame" x="175" y="416" width="64" height="64"/>
+                                <rect key="frame" x="268" y="268" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Ju-hI-GcK" secondAttribute="height" id="92r-aL-H1a"/>
                                     <constraint firstAttribute="width" constant="64" id="pXG-iS-dPx"/>
@@ -48,13 +47,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must write a record name before we play it " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liZ-kH-GZ2">
-                                <rect key="frame" x="28.5" y="134.5" width="357" height="19.5"/>
+                                <rect key="frame" x="121.5" y="90.5" width="357" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHX-BJ-N7L" userLabel="Play">
-                                <rect key="frame" x="175" y="510" width="64" height="64"/>
+                                <rect key="frame" x="268" y="362" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hHX-BJ-N7L" secondAttribute="height" multiplier="1:1" id="Jt9-YB-elS"/>
                                 </constraints>
@@ -64,7 +63,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFW-UN-SDz">
-                                <rect key="frame" x="200.5" y="208" width="13.5" height="17"/>
+                                <rect key="frame" x="293.5" y="164" width="13.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -97,10 +96,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="house.fill" catalog="system" selectedImage="house.fill" id="bO1-9U-oUT"/>
                     <connections>
-                        <outlet property="hearingLabel" destination="RFW-UN-SDz" id="OMv-iF-EYE"/>
                         <outlet property="name" destination="tFd-SE-DCx" id="SrR-yU-hTS"/>
                         <outlet property="play" destination="9Ju-hI-GcK" id="zO8-TT-HNL"/>
                         <outlet property="record" destination="jtE-aa-M6r" id="VcK-hr-D1k"/>
+                        <outlet property="recordingLabel" destination="RFW-UN-SDz" id="OMv-iF-EYE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -131,22 +130,22 @@
             <objects>
                 <viewController id="vaG-oS-kTw" customClass="HistoryController" customModule="RecordAndPlayDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dsm-IN-fZ3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Df-Fj-jqk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemRecorded" rowHeight="60" id="qwj-3L-nVG" customClass="ItemRecorded" customModule="RecordAndPlayDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qwj-3L-nVG" id="YYx-TY-YNT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYb-61-pqA">
-                                                    <rect key="frame" x="70" y="20.5" width="314" height="19.5"/>
+                                                    <rect key="frame" x="70" y="20.5" width="505" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>

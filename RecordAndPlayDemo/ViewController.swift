@@ -10,10 +10,11 @@ import UIKit
 import AVFoundation
 import CoreMIDI
 
-enum controls {
+enum State {
   case play
-  case pause
+  case stop
   case record
+  case none
 }
 
 class ViewController: UIViewController {
@@ -21,14 +22,14 @@ class ViewController: UIViewController {
   @IBOutlet weak var record: UIButton!
   @IBOutlet weak var play: UIButton!
   @IBOutlet weak var name: UITextField!
-  @IBOutlet weak var hearingLabel: UILabel!
+  @IBOutlet weak var recordingLabel: UILabel!
   
   private var audioPlayer:AVAudioPlayer?
   private var avAudioPlayer: AVAudioPlayer?
   private var audioRecorder: AVAudioRecorder!
   private var audioRecordingSession: AVAudioSession!
   private let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: "TryKy", ofType: "mp3")!)
-  
+  private var state : State = .none
   override func viewDidLoad() {
     super.viewDidLoad()
     audioPlayer = try! AVAudioPlayer(contentsOf: url.absoluteURL!)
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
         if granted {
             // The user granted access. Present recording interface.
         } else {
-          self.showAlertSetting(title: "Warning", message: "There is no microphone permission for Application. Please allow it to use your microphone")
+          self.showAlertAction(title: "Warning", message: "There is no microphone permission for Application. Please allow it to use your microphone")
         }
     }
 
@@ -67,16 +68,27 @@ class ViewController: UIViewController {
   }
   
   @IBAction func stop() {
-    audioRecorder.stop()
-    audioPlayer?.stop()
-    name.resignFirstResponder()
-    self.controlAudio(.pause)
+    if state == .play {
+      audioRecorder.stop()
+      audioPlayer?.stop()
+      name.resignFirstResponder()
+      self.controlAudio(.stop)
+    } else {
+      showAlert(title: "Warning", message: "You should record something first!")
+    }
+    
     //DispatchQueue.main.asyncAfter(deadline: 1, execute: {
       
   }
   @IBAction func playRecorded() {
-    avAudioPlayer?.play()
-    self.controlAudio(.play)
+    if let audio = avAudioPlayer {
+      avAudioPlayer?.play()
+      self.controlAudio(.play)
+    } else {
+      showAlert(title: "Warning", message: "You should record then save it first!")
+    }
+    
+      
   }
   
   func setupRecorder() {
@@ -113,17 +125,21 @@ class ViewController: UIViewController {
     return soundURL
   }
   
-  func controlAudio(_ control: controls) {
+  func controlAudio(_ state: State) {
     var str = ""
-    switch control {
+    self.state = state
+    switch state {
     case .play:
-      str = "Playing"
-    case .pause:
-      str = "Pause"
+      str = "Playing back"
+    case .stop:
+      str = "Record file is saved"
+      
     case .record:
-      str = "Hearing"
+      str = "Recording"
+    case .none:
+      break;
     }
-    self.hearingLabel.text = str
+    self.recordingLabel.text = str
   }
   
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A409132523F8EE7A000B0E7A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409132423F8EE7A000B0E7A /* UIViewController+Extensions.swift */; };
 		A48C7ECC23F7B1DC004CC415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48C7ECB23F7B1DC004CC415 /* AppDelegate.swift */; };
 		A48C7ECE23F7B1DC004CC415 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48C7ECD23F7B1DC004CC415 /* SceneDelegate.swift */; };
 		A48C7ED023F7B1DC004CC415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48C7ECF23F7B1DC004CC415 /* ViewController.swift */; };
@@ -18,10 +19,10 @@
 		A4E7117023F7F15000AAC968 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E7116F23F7F15000AAC968 /* HistoryController.swift */; };
 		A4E7117223F7F3AB00AAC968 /* ItemRecorded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E7117123F7F3AB00AAC968 /* ItemRecorded.swift */; };
 		D1251E7A23F83F12007E7859 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1251E7923F83F12007E7859 /* UIView+Extensions.swift */; };
-		D1251E7D23F83FB7007E7859 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1251E7B23F83FB7007E7859 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A409132423F8EE7A000B0E7A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		A48C7EC823F7B1DC004CC415 /* RecordAndPlayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordAndPlayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48C7ECB23F7B1DC004CC415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48C7ECD23F7B1DC004CC415 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		A4E7116F23F7F15000AAC968 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		A4E7117123F7F3AB00AAC968 /* ItemRecorded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecorded.swift; sourceTree = "<group>"; };
 		D1251E7923F83F12007E7859 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		D1251E7B23F83FB7007E7859 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +95,8 @@
 		D1251E7823F83EEF007E7859 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D1251E7B23F83FB7007E7859 /* UIViewController+Extension.swift */,
 				D1251E7923F83F12007E7859 /* UIView+Extensions.swift */,
+				A409132423F8EE7A000B0E7A /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -177,8 +177,8 @@
 				D1251E7A23F83F12007E7859 /* UIView+Extensions.swift in Sources */,
 				A4E7117023F7F15000AAC968 /* HistoryController.swift in Sources */,
 				A48C7ED023F7B1DC004CC415 /* ViewController.swift in Sources */,
+				A409132523F8EE7A000B0E7A /* UIViewController+Extensions.swift in Sources */,
 				A4E7117223F7F3AB00AAC968 /* ItemRecorded.swift in Sources */,
-				D1251E7D23F83FB7007E7859 /* UIViewController+Extension.swift in Sources */,
 				A48C7ECC23F7B1DC004CC415 /* AppDelegate.swift in Sources */,
 				A48C7ECE23F7B1DC004CC415 /* SceneDelegate.swift in Sources */,
 			);
