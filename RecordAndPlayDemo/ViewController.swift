@@ -10,23 +10,32 @@ import UIKit
 import AVFoundation
 import CoreMIDI
 
+enum controls {
+  case play
+  case pause
+  case record
+}
+
 class ViewController: UIViewController {
+  
   @IBOutlet weak var record: UIButton!
   @IBOutlet weak var play: UIButton!
+  @IBOutlet weak var name: UITextField!
+  @IBOutlet weak var hearingLabel: UILabel!
+  
   private var audioPlayer:AVAudioPlayer?
   private var avAudioPlayer: AVAudioPlayer?
   private var audioRecorder: AVAudioRecorder!
   private var audioRecordingSession: AVAudioSession!
-  @IBOutlet weak var name: UITextField!
-  private
-  let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: "TryKy", ofType: "mp3")!)
+  private let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: "TryKy", ofType: "mp3")!)
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     audioPlayer = try! AVAudioPlayer(contentsOf: url.absoluteURL!)
     audioPlayer?.delegate = self
     audioPlayer?.prepareToPlay()
-    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+    
     //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
     //tap.cancelsTouchesInView = false
 
@@ -35,7 +44,7 @@ class ViewController: UIViewController {
         if granted {
             // The user granted access. Present recording interface.
         } else {
-          self.showAlertAction(title: "Warning", message: "There is no microphone permission for ViMap. Please allow it to use your microphone")
+          self.showAlertSetting(title: "Warning", message: "There is no microphone permission for Application. Please allow it to use your microphone")
         }
     }
 
@@ -51,20 +60,23 @@ class ViewController: UIViewController {
       audioPlayer?.play()
       setupRecorder()
       audioRecorder.record()
+      self.controlAudio(.record)
     } else {
       showAlert(title: "Warning", message: "The record name is blank, fill something first!")
     }
   }
+  
   @IBAction func stop() {
-    
     audioRecorder.stop()
     audioPlayer?.stop()
     name.resignFirstResponder()
+    self.controlAudio(.pause)
     //DispatchQueue.main.asyncAfter(deadline: 1, execute: {
       
   }
   @IBAction func playRecorded() {
-      avAudioPlayer?.play()
+    avAudioPlayer?.play()
+    self.controlAudio(.play)
   }
   
   func setupRecorder() {
@@ -79,7 +91,7 @@ class ViewController: UIViewController {
                     AVEncoderAudioQualityKey : AVAudioQuality.max.rawValue,
                     AVEncoderBitRateKey : 320000,
                     AVNumberOfChannelsKey: 2,
-    AVSampleRateKey: 44100.0] as [String : Any]
+                    AVSampleRateKey: 44100.0] as [String : Any]
     
     do {
       audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
@@ -100,7 +112,20 @@ class ViewController: UIViewController {
     let soundURL = documentsDirectory.appendingPathComponent(name.text!)
     return soundURL
   }
-
+  
+  func controlAudio(_ control: controls) {
+    var str = ""
+    switch control {
+    case .play:
+      str = "Playing"
+    case .pause:
+      str = "Pause"
+    case .record:
+      str = "Hearing"
+    }
+    self.hearingLabel.text = str
+  }
+  
 }
 extension ViewController : AVAudioPlayerDelegate {
   
@@ -113,33 +138,4 @@ extension ViewController : AVAudioRecorderDelegate {
       avAudioPlayer?.prepareToPlay()
     }
   }
-}
-extension UIViewController {
-  func showAlertAction(title: String, message : String) {
-    let alertController = UIAlertController (title: title, message: message, preferredStyle: .alert)
-    let settingsAction = UIAlertAction(title: "Setting", style: .default) { (_) -> Void in
-      guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-        return
-      }
-      if UIApplication.shared.canOpenURL(settingsUrl) {
-        UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
-      }
-    }
-    alertController.addAction(settingsAction)
-    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-    alertController.addAction(cancelAction)
-    DispatchQueue.main.async {
-      self.present(alertController, animated: true, completion: nil)
-    }
-  }
-  func showAlert(title: String, message : String) {
-         let alertController = UIAlertController(title: title, message:
-             message, preferredStyle: .alert)
-         alertController.addAction(UIAlertAction(title: "OK", style: .default))
-         DispatchQueue.main.async(execute: {
-             self.present(alertController, animated: true, completion: nil)
-             
-         })
-         
-     }
 }

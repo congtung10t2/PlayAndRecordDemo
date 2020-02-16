@@ -51,8 +51,26 @@ extension HistoryController : UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let url = data[indexPath.row];
     audioPlayer = try! AVAudioPlayer(contentsOf: url)
-     
+    
     audioPlayer?.prepareToPlay()
     audioPlayer?.play()
+  }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return "HISTORY LIST"
+  }
+  
+  func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    let header = view as! UITableViewHeaderFooterView
+    header.textLabel?.textColor = .black
+    header.textLabel?.font = UIFont(name: "System", size: 16)
+    header.textLabel?.baselineAdjustment = .alignCenters
+  }
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 60.0
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 40.0
   }
 }
